@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: ms-consumidor-ubicaciones-vehiculos
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@vdmfdtgcfjalwhry_high?TNS_ADMIN=${WALLET_TNS}
+    username: COUDNATIVE
+    password: MiContrasenia#2025
+    hikari:
+      pool-name: Hikari-OracleADB
+      maximum-pool-size: 10
+      minimum-idle: 2
+      validation-timeout: 5000
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.OracleDialect
+    hibernate:
+      ddl-auto: validate
+  rabbitmq:
+    host: rabbit.eastus2.cloudapp.azure.com
+    port: 5672
+    username: admin
+    password: admin123
+
+server:
+  port: 8081

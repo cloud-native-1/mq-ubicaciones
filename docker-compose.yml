@@ -12,7 +12,7 @@ services:
       - app-network
 
   mq-consumidor-ubicaciones:
-    container_name: consumudor-ubicaciones
+    container_name: consumidor-ubicaciones
     build:
       context: ./ms-consumidor-ubicaciones-vehiculos
       dockerfile: Dockerfile

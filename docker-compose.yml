@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  mq-productor-ubicaiones:
+    container_name: productor-ubicaciones
+    build:
+      context: ./ms-productor-ubicaciones-vehiculos
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    networks:
+      - app-network
+
+  mq-consumidor-ubicaciones:
+    container_name: consumudor-ubicaciones
+    build:
+      context: ./ms-consumidor-ubicaciones-vehiculos
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

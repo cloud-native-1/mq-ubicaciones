@@ -18,10 +18,10 @@ FROM eclipse-temurin:21-jre
 # Crea directorio de la app
 WORKDIR /app
 
-#COPY --from=builder /app/target/*.jar app.jar
+COPY --from=builder /app/target/*.jar app.jar
 
 # Copia el JAR de tu microservicio (asegúrate que el nombre coincida)
-COPY src/main/resources/wallet /app/wallet
+#COPY src/main/resources/wallet /app/wallet
 #
 ## Variables entorno
 #ENV WALLET_TNS="/app/wallet"

@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "UBICACION")
@@ -38,7 +39,7 @@ public class UbicacionEntity {
 
     @Column(name = "fecha_hora")
     @NotNull(message = "Fecha y hora no pueden ser nulas")
-    private LocalDate fechaHora;
+    private LocalDateTime fechaHora;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "patente")

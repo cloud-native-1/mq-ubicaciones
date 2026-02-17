@@ -19,6 +19,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 @Slf4j
@@ -42,7 +43,7 @@ public class UbicacionServiceImpl implements UbicacionService {
         }
         UbicacionEntity entity = mapper.dtoToUbicacionEntity(rqDto);
         entity.setVehiculo(vehiculoEntity.get());
-        entity.setFechaHora(LocalDate.now());
+        entity.setFechaHora(LocalDateTime.now());
         mapper.entityToUbicacionRsDto(repository.save(entity));
         log.info("Service - Ubicacion ingresada");
     }
